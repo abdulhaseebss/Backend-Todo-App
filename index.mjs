@@ -2,8 +2,10 @@ import express from 'express';
 import mongoose from 'mongoose';
 import { MONGO_URI, PORT } from './src/config/env.mjs';
 import routes from './src/routes/index.mjs';
+import cors from "cors"
 
 const app = express();
+app.use(cors())
 
 // Connect to MongoDB
 mongoose.connect(MONGO_URI, {
